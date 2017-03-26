@@ -38,7 +38,7 @@ def register():
         cur.execute(
             '''INSERT INTO Users (full_name,login,password,number_phone,model_phone,email) VALUES ('%s','%s','%s','%s','%s','%s')'''
             % (full_name, login, password, number_phone, model_phone, email_))
-        cur.execute('''SELECT id FROM Users WHERE email='%s' ''' % email_)
+        cur.execute('''SELECT id FROM Users WHERE login='%s' ''' % login)
         date = cur.fetchone()
     except Exception:
         conn.commit()
